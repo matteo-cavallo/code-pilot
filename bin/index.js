@@ -4,10 +4,12 @@ import fs from 'fs';
 import os from 'os'
 import prompts from 'prompts'
 import ora from 'ora'
+import args from 'args'
 
 const configFilePath = `${os.homedir()}/.gptcodereviewconfig`;
 
-// Good code
+args.option('filePath', 'The path of the file')
+const {filePath} = args.parse(process.argv)
 
 const sendMessage = async (prompt, apiKey) => {
     const api = new ChatGPTAPI({apiKey});
@@ -54,7 +56,7 @@ const generateSummary = async (code, apiKey) => {
 }
 
 const summary = async (apiKey) => {
-    const path = await getFilePath()
+    const path = filePath || await getFilePath()
     const code = await getCode(path)
 
     if(!path | !code){
@@ -62,15 +64,14 @@ const summary = async (apiKey) => {
     }
 
     const response = await generateSummary(code, apiKey)
-    console.log(response)
+    console.log(`Summary:\n${response}`)
 }
 
 const getFilePath = async () => {
     const {path} = await prompts({
         type: 'text',
         name: 'path',
-        message: 'What is the path of the file?',
-        initial: './index.js'
+        message: 'What is the path of the file?'
     });
 
     return path
