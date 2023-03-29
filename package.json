@@ -1,6 +1,6 @@
 {
   "name": "code-pilot",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Code-Pilot is a powerful code analysis tool that allows developers to generate brief summaries of their code.",
   "main": "bin/index.js",
   "type": "module",
