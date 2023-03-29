@@ -11,6 +11,7 @@ CodePilot is an npm package that can help you navigate and understand complex co
 ```bash
 npm install -g code-pilot
 ```
+Make sure you're using node >= 18 so fetch is available
 2. Get your OpenAI API key from the OpenAI API website
 
 3. Run the CodePilot CLI tool and follow the prompts:
