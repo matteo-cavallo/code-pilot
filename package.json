@@ -1,0 +1,29 @@
+{
+  "name": "code-pilot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "code-pilot": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "openai",
+    "gpt-3",
+    "cli",
+    "generator",
+    "code"
+  ],
+  "author": "Matteo Cavallo",
+  "license": "ISC",
+  "dependencies": {
+    "args": "5.0.3",
+    "chatgpt": "5.1.3",
+    "ora": "^6.3.0",
+    "os": "^0.1.2",
+    "prompts": "2.4.2"
+  }
+}
