@@ -1,7 +1,7 @@
 {
   "name": "code-pilot",
   "version": "1.0.0",
-  "description": "",
+  "description": "Code-Pilot is a powerful code analysis tool that allows developers to generate brief summaries of their code.",
   "main": "index.js",
   "type": "module",
   "bin": {
@@ -22,8 +22,8 @@
   "dependencies": {
     "args": "5.0.3",
     "chatgpt": "5.1.3",
-    "ora": "^6.3.0",
-    "os": "^0.1.2",
+    "ora": "6.3.0",
+    "os": "0.1.2",
     "prompts": "2.4.2"
   }
 }
