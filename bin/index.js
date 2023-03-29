@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import {ChatGPTAPI} from 'chatgpt';
 import fs from 'fs';
 import os from 'os'

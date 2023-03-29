@@ -1,14 +1,14 @@
 {
   "name": "code-pilot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Code-Pilot is a powerful code analysis tool that allows developers to generate brief summaries of their code.",
-  "main": "index.js",
+  "main": "bin/index.js",
   "type": "module",
   "bin": {
-    "code-pilot": "./index.js"
+    "code-pilot": "bin/index.js"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node bin/index.js"
   },
   "keywords": [
     "openai",
