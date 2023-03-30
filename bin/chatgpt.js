@@ -34,4 +34,17 @@ const promptApiKey = async () => {
     return apiKey;
 };
 
-export {getApiKey, promptApiKey, sendMessage}
+/**
+ * Reset OpenAI Api Key
+ * @return {Promise<void>}
+ */
+const reset = async () => {
+    if (fs.existsSync(configFilePath)) {
+        fs.unlinkSync(configFilePath);
+        console.log('API key has been reset.');
+    } else {
+        console.log('No API key found.');
+    }
+}
+
+export {getApiKey, promptApiKey, sendMessage, reset}
