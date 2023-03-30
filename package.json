@@ -1,6 +1,6 @@
 {
   "name": "code-pilot",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Code-Pilot is a powerful code analysis tool that allows developers to generate brief summaries of their code.",
   "homepage": "https://github.com/matteomad1011/code-pilot",
   "repository": {
