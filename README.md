@@ -6,6 +6,7 @@ CodePilot is an npm package that can help you navigate and understand complex co
 - Customizable prompts and output formatting for a tailored user experience
 - Seamlessly integrate with other development tools and workflows
 
+![Showcase Image of CodePilot](./showcase/1.png)
 ## Getting Started
 1. Install CodePilot using npm:
 ```bash
@@ -31,3 +32,7 @@ We welcome contributions from anyone! If you have an idea for a new feature or w
 
 ## License
 CodePilot is released under the [MIT](https://opensource.org/license/mit/) License.
+
+## Showcase
+![Showcase Image of CodePilot](./showcase/2.png)
+![Showcase Image of CodePilot](./showcase/3.png)
