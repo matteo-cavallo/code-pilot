@@ -28,6 +28,16 @@ CodePilot offers a simple command-line interface that lets you quickly generate 
 
 You can also customize the prompts and output formatting by passing in options to the code-pilot command. See the documentation for more details.
 
+## Resetting API Key
+To reset your OpenAI API key, you can run the following command:
+
+```bash
+code-pilot --resetApiKey
+```
+This will prompt you to enter your new OpenAI API key, which will be used for all future CodePilot sessions.
+
+
+
 ## Contributing
 We welcome contributions from anyone! If you have an idea for a new feature or want to fix a bug, please submit a pull request or create an issue on GitHub. See CONTRIBUTING.md for more information.
 
