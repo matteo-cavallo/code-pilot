@@ -5,6 +5,7 @@ import {getApiKey, reset } from "./chatgpt.js";
 import {identifyIssues} from "./issues.js";
 import {getCode, getFilePath} from "./utils.js";
 import {summary} from "./summary.js";
+import {customRequest} from "./custom.js";
 
 args
     .option('filePath', 'The path of the file')
@@ -39,6 +40,7 @@ const run = async () => {
         choices: [
             {title: 'Explain code', description: 'Write a brief summary of the code.', value: 'summary'},
             {title: 'Identify issues', description: 'Identify any issues with the code.', value: 'issues'},
+            {title: 'Custom request', description: 'Ask anything regarding the code', value: 'custom'},
         ]
     })
 
@@ -55,14 +57,15 @@ const run = async () => {
         return
     }
 
-
-
     switch (selection) {
         case 'summary':
             await summary(code,apiKey)
             break
         case 'issues':
             await identifyIssues(code, apiKey)
+            break
+        case 'custom':
+            await customRequest(code, apiKey)
             break
         default:
             console.log('Invalid selection')

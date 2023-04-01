@@ -3,12 +3,23 @@ import prompts from "prompts";
 import fs from 'fs'
 import {configFilePath} from "./utils.js";
 
-const sendMessage = async (prompt, apiKey) => {
+const sendMessage = async (prompt, apiKey, options) => {
     const api = new ChatGPTAPI({apiKey});
 
-    const res = await api.sendMessage(prompt);
+    const res = await api.sendMessage(prompt, options);
     return res.text;
 };
+
+const sendFullMessage = async (prompt, apiKey, options) => {
+    const api = new ChatGPTAPI({apiKey});
+
+    const res = await api.sendMessage(prompt, options);
+    return res;
+};
+
+const getSystemPrompt = (code) => {
+    return `You are a code reviewer. This is the code:\n${code}`
+}
 
 async function getApiKey() {
     if (fs.existsSync(configFilePath)) {
@@ -47,4 +58,4 @@ const reset = async () => {
     }
 }
 
-export {getApiKey, promptApiKey, sendMessage, reset}
+export {getApiKey, promptApiKey, sendMessage, reset, getSystemPrompt, sendFullMessage}

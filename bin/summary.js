@@ -1,5 +1,5 @@
 import ora from "ora";
-import {sendMessage} from "./chatgpt.js";
+import {getSystemPrompt, sendMessage} from "./chatgpt.js";
 
 /**
  * Generate a summary of the code
@@ -8,8 +8,13 @@ import {sendMessage} from "./chatgpt.js";
  */
 const summary = async (code, apiKey) => {
     const loading = ora('Doing magic...').start()
-    const prompt = `Act as a code reviewer, you make a brief summary of this code:\n\n${code}`
-    const response = await sendMessage(prompt, apiKey)
+    const prompt = `You answer as concisely as possible. Write a summary of the code.`
+
+    const options = {
+        systemMessage: getSystemPrompt(code)
+    }
+
+    const response = await sendMessage(prompt, apiKey, options)
     loading.stop()
     console.log(`Summary:\n${response}`)
 }
